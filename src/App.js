@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { Provider, useDispatch } from "react-redux";
+import "./App.css";
+import Dashboard from "./Dashboard/Dashboard";
+import SideNav from "./Sidenav/SideNav";
+import { getStates } from "./store/states";
+import store from "./store/store";
+import TopBar from "./TopBar/topbar";
 
 function App() {
+  const [isSideNavCollapsed, setIsSideNavCollapsed] = useState(false);
+  const dispatch = useDispatch();
+
+  const toggleSideNav = () => {
+    setIsSideNavCollapsed(!isSideNavCollapsed);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar onToggleSideNav={toggleSideNav} />
+      <div className="space">
+        <SideNav isCollapsed={isSideNavCollapsed} />
+        <Dashboard />
+      </div>
     </div>
   );
 }

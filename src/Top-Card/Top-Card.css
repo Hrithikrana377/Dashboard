@@ -1,0 +1,19 @@
+.card {
+  /* background-color: #ddd; */
+  padding: 30px 20px;
+  flex: 1 1 auto;
+  background-color: #fff;
+}
+
+.title {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+img {
+  height: 50px;
+}
