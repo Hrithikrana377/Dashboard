@@ -135,7 +135,10 @@ const Dashboard = () => {
         <div className="charts">
           <div className="chart-row">
             <div className="chart">
-              <DonutChart chartData={salesByCategory} />
+              <DonutChart
+                chartData={salesByCategory}
+                title="Sales by Category"
+              />
             </div>
             <div className="chart">
               <Table
@@ -145,7 +148,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="chart">
-              <DonutChart chartData={salesByCategory} />
+              <DonutChart chartData={salesBySegment} title="Sales by Segment" />
             </div>
           </div>
         </div>

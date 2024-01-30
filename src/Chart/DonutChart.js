@@ -3,19 +3,24 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DonutChart = ({ chartData }) => {
+const DonutChart = ({ chartData, title }) => {
   const data = {
-    labels: ["Label 1", "Label 2", "Label 3"],
+    labels: (chartData || []).map((x) => x.label),
     datasets: [
       {
-        data: [30, 50, 20],
+        data: (chartData || []).map((x) => x.value),
         backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
         hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
       },
     ],
   };
 
-  return <Doughnut data={data} />;
+  return (
+    <>
+      <h3>{title}</h3>
+      <Doughnut data={data} />
+    </>
+  );
 };
 
 export default DonutChart;

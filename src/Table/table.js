@@ -12,20 +12,20 @@ const Table = ({ tableData, title, desc }) => {
       } else {
         setTableData(tableData);
       }
-    }, 1000);
+    }, 0);
     return () => clearTimeout(delay);
   }, [tableData]);
   return (
     <>
-      <h3 style={{ marginTop: "0px" }}>{title}</h3>
-      <div class="rana-header">
-        <div class="description-label">{desc}</div>
-        <div class="value-label">Sales in $</div>
+      <h3>{title}</h3>
+      <div className="rana-header">
+        <div className="description-label">{desc}</div>
+        <div className="value-label">Sales in $</div>
       </div>
       {(Data || []).map((x) => (
-        <div class="rana-row">
-          <div class="description">{x.label}</div>
-          <div class="value">{x.value}</div>
+        <div className="rana-row">
+          <div className="description">{x.label}</div>
+          <div className="value">{x.value}</div>
         </div>
       ))}
     </>

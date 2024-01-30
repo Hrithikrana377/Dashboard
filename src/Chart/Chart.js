@@ -21,6 +21,9 @@ const Chart = ({ chartData, type, name }) => {
     xAxis: {
       type: "category",
       data: data.categories,
+      axisLabel: {
+        rotate: 45,
+      },
     },
     yAxis: {
       type: "value",

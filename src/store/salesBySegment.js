@@ -29,7 +29,7 @@ const salesBySegment = createSlice({
 export default salesBySegment.reducer;
 
 export const getsalesBySegment = createAsyncThunk(
-  "salesBySubCategory/get",
+  "salesBySegment/get",
   async (request) => {
     const result = await axios.post(
       "http://localhost:4200/SalesBySegment",
