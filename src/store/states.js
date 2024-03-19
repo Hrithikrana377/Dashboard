@@ -29,6 +29,6 @@ const stateSlice = createSlice({
 export default stateSlice.reducer;
 
 export const getStates = createAsyncThunk("states/get", async () => {
-  const result = await axios.get("http://localhost:4200/states");
+  const result = await axios.get("https://dashboard-api-ocib.onrender.com/states");
   return result.data;
 });

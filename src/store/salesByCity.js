@@ -32,7 +32,7 @@ export const getsalesByCity = createAsyncThunk(
   "salesByCity/get",
   async (request) => {
     const result = await axios.post(
-      "http://localhost:4200/SalesByCity",
+      "https://dashboard-api-ocib.onrender.com/SalesByCity",
       request
     );
     return result.data;

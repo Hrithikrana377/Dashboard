@@ -39,14 +39,14 @@ const saleSlice = createSlice({
 export default saleSlice.reducer;
 
 export const getSalesRecord = createAsyncThunk("sales/get", async () => {
-  const result = await axios.get("http://localhost:4200/usersData");
+  const result = await axios.get("https://dashboard-api-ocib.onrender.com/usersData");
   return result.data;
 });
 
 export const getRecordsOnParameter = createAsyncThunk(
   "summary/post",
   async (request) => {
-    const response = await axios.post("http://localhost:4200/summary", request);
+    const response = await axios.post("https://dashboard-api-ocib.onrender.com/summary", request);
     console.log(response.data);
     return response.data;
   }

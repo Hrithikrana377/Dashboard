@@ -32,7 +32,7 @@ export const getsalesByProduct = createAsyncThunk(
   "salesByProduct/get",
   async (request) => {
     const result = await axios.post(
-      "http://localhost:4200/SalesByProducts",
+      "https://dashboard-api-ocib.onrender.com/SalesByProducts",
       request
     );
     return result.data;

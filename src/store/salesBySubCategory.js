@@ -32,7 +32,7 @@ export const getsalesBySubCategory = createAsyncThunk(
   "salesBySubCategory/get",
   async (request) => {
     const result = await axios.post(
-      "http://localhost:4200/SalesBySubCategory",
+      "https://dashboard-api-ocib.onrender.com/SalesBySubCategory",
       request
     );
     return result.data;
